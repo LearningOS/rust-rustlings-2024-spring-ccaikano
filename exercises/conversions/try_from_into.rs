@@ -56,7 +56,6 @@ impl TryFrom<(i16, i16, i16)> for Color {
 impl TryFrom<[i16; 3]> for Color {
     type Error = IntoColorError;
     fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {
-        // 这个写法很妙，调用元组那边的实现
         Color::try_from((arr[0], arr[1], arr[2]))
     }
 }
